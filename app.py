@@ -12,12 +12,24 @@ from moviepy.editor import *
 from database import engine, Gif
 save_loc = 'generated'
 
+
+
 def open_db():
     Session = sessionmaker(bind=engine)
     session = Session()
     return session
 
 def main():
+    st.markdown("""
+    <style>
+    section.main {
+        background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWYzMWQxNWJjNmUxMTVkMmI4M2U2YzFhZTkwNzYzYzQxNGNiZWI1YiZjdD1n/3o6vXTpomeZEyxufGU/giphy.gif');
+        background-size: contain;
+        background-position: center;
+        background-color: #000000;
+        background-repeat: no-repeat;
+    }
+    """, unsafe_allow_html=True)
     st.title("Gif Creator")
     st.write("Upload images to create a gif")
 
@@ -107,7 +119,19 @@ __login__obj = __login__(auth_token = "courier_auth_token",
                     lottie_url = 'https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json')
 
 LOGGED_IN = __login__obj.build_login_ui()
-
+st.markdown("""
+    <style>
+    section.main {
+        background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWYzMWQxNWJjNmUxMTVkMmI4M2U2YzFhZTkwNzYzYzQxNGNiZWI1YiZjdD1n/3o6vXTpomeZEyxufGU/giphy.gif');
+        background-size: contain;
+        background-position: center;
+        background-color: #000000;
+        background-repeat: no-repeat;
+    }
+    .menu div.container-xxl{
+        background-color: red !important;
+    }
+    """, unsafe_allow_html=True)
 if LOGGED_IN == True:
     
     main()
